@@ -19,7 +19,21 @@ async function create(req, res) {
     }
 }
 
+async function show(req, res) {
+    Stadium.findById(req.params.id, function(err, stadium) {
+        res.render('stadiums/show', {
+            stadium
+        })
+    })
+}
+
+async function deleteStadium(req, res) {
+    res.json(await Stadium.findByIdAndRemove(req.params.id))
+}
+
 module.exports = {
     index,
     create,
+    show,
+    delete: deleteStadium,
 }
