@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const stadiumSchema = new Schema({
-    // stadium: String,
+    stadium: String,
     location: String,
 }, {timestamps: true})
 
